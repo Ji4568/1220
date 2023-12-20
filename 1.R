@@ -1,30 +1,22 @@
-Data = read.table("Example.txt", header = TRUE)
-head(Data, 10)
-
-
-summary(Data) 
+Result1 = cor.test(Data[,"Weight"], Data[,"Height"], method = "pearson") # Pearson correlation
+Result1
 
 
 
-
-Result = lm(Weight~Height, data = Data) #linear regression test
-Result
-
-
-summary(Result)
+Result2 = cor.test(Data[,"Weight"], Data[,"Height"], method = "spearman") # Spearman correlation
+Result2
 
 
-plot(Data$Height, Data$Weight, pch = 19)
-abline(Result)
 
 
-Data=read.table("Example.txt", header = TRUE)
-colnames(Data)
 
-colnames(Data)[1]
 
-colnames(Data)[4]
 
-Result1 = lm(Data[,"Weight"]~Data[,"Height"])
-summary(Result1)
+
+
+
+
+
+
+
 
