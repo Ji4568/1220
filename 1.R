@@ -1,8 +1,30 @@
-Data=read.table("Example.txt", header = TRUE) #讀取Example.txt，並存成"Data"這個物件(資料表格式)
-head(Data, 10) #看"Data"這個資料表的前10個row
-
-summary(Data)
+Data = read.table("Example.txt", header = TRUE)
+head(Data, 10)
 
 
-Color = "red"
-plot(Data, col = Color)
+summary(Data) 
+
+
+
+
+Result = lm(Weight~Height, data = Data) #linear regression test
+Result
+
+
+summary(Result)
+
+
+plot(Data$Height, Data$Weight, pch = 19)
+abline(Result)
+
+
+Data=read.table("Example.txt", header = TRUE)
+colnames(Data)
+
+colnames(Data)[1]
+
+colnames(Data)[4]
+
+Result1 = lm(Data[,"Weight"]~Data[,"Height"])
+summary(Result1)
+
